@@ -9,17 +9,14 @@ const outDir = resolve(__dirname, 'dist');
 export default defineConfig({
   plugins: [react()],
   root,
-  server: {
-    port: 3000
-  },
   build: {
     outDir, 
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main:  resolve(root, 'index.html'),
-        page1: resolve(root, 'page1.html'),
-        page2: resolve(root, 'page2.html'),
+        main: resolve(root, 'index.html'),
+        app1: resolve(root, 'app1.html'),
+        app2: resolve(root, 'app2.html'),
       }
     }
   },
