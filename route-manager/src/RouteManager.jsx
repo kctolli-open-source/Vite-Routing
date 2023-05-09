@@ -27,10 +27,10 @@ export default function RouteManager() {
         }
         i++;
     } while ( 
+        i < apps.length  || 
+        i < pages.length ||
         path != pages[i] || 
-        path != `${pages[i]}.html` || 
-        i < apps.length || 
-        i < pages.length
+        path != `${pages[i]}.html` 
     );
     
     return <App/>;
