@@ -18,20 +18,23 @@ const apps = [
 export default function RouteManager() {
     const path = window.location.pathname;
     let i = 0;
-    do {
-        if ( 
-            path == pages[i] || 
-            path == `${pages[i]}.html`
-        ) { 
-            return apps[i]; 
-        }
-        i++;
-    } while ( 
-        i < apps.length  || 
-        i < pages.length ||
-        path != pages[i] || 
-        path != `${pages[i]}.html` 
-    );
-    
-    return <App/>;
+    try {
+        do {
+            if ( 
+                path == pages[i] || 
+                path == `${pages[i]}.html`
+            ) { 
+                return apps[i]; 
+            }
+            i++;
+        } while ( 
+            i < apps.length  || 
+            i < pages.length ||
+            path != pages[i] || 
+            path != `${pages[i]}.html` 
+        );
+    } catch (err) {
+        console.error(err);
+        return <App />;
+    }
 }
