@@ -1,6 +1,9 @@
 import Index from './Index.jsx';
-import Page1 from './Page1.jsx';
+//import Page1 from './Page1.jsx';
 import Page2 from './Page2.jsx';
+
+const Page1 = () => import('./Page1.jsx');
+
 
 const path = window.location.pathname;
 
